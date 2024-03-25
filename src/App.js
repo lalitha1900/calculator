@@ -6,9 +6,15 @@ export default function App() {
     if (value === "C") {
       document.getElementById("input").value = "";
     } else if (value == "=") {
+      if(eval(
+        document.getElementById("input").value
+      )==undefined)
+      document.getElementById("output").innerHTML ="Error";
+      else
       document.getElementById("output").innerHTML = eval(
         document.getElementById("input").value
-      );
+      )
+
     } else {
       document.getElementById("input").value += value;
     }
